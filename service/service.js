@@ -35,6 +35,7 @@ exports.postCreateService = async (data) => {
   const result = await prisma.Post.create({ data: data });
   return result;
 };
-exports.postGetService = () => {
-  console.log("hello");
+exports.postGetService = async () => {
+  const result = await prisma.Post.findMany();
+  return result;
 };

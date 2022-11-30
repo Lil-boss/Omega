@@ -92,4 +92,14 @@ exports.createPost = async (req, res) => {
     });
   }
 };
-exports.getPost = () => {};
+exports.getPost = async (req, res) => {
+  try {
+    if (req.user) {
+      const result = await postGetService();
+      res.status(201).json({
+        status: "success",
+        data: result,
+      });
+    }
+  } catch (error) {}
+};

@@ -11,5 +11,5 @@ const {
 //routes
 router.route("/user").post(createUser);
 router.route("/login").post(logIn);
-router.route("/post").post(verify, createPost);
+router.route("/post").post(verify, createPost).get(verify, getPost);
 module.exports = router;
